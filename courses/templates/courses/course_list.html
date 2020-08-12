@@ -3,8 +3,14 @@
 {% block title %}Listado de cursos{% endblock %}
 
 {% block content %}
-    {% for course in courses %}
-        <h2>{{ course.title }}</h2>
-        <p>{{ course.description }}</p>
-    {% endfor %}
+    <div class="cards">
+        {% for course in courses %}
+            <div class="card">
+                <head><a href="{% url 'courses:course_detail' pk=course.pk %}"><h2>{{ course.title }}</h2></a></head>
+                <div class="card-body">
+                    {{ course.description }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
