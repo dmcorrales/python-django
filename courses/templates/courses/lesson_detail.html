@@ -7,7 +7,15 @@
 
    <h1>{{lesson.course.title}}</h1>
     <p>
-       {{lesson.description}} 
+         {% with description=lesson.description %}
+         {{description}}
+
+      <br>
+         Palabras:
+         {{description|wordcount}}
+         {% endwith %} 
     </p>
 
 {% endblock %}
+
+
