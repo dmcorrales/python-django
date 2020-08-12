@@ -13,7 +13,10 @@
         <section>
             {% for lesson in course.lesson_set.all %}
                 <h3>
-                    {{lesson.title}}
+                    <a href="{% url 'courses:lesson_detail' course_pk=lesson.course.pk lesson_pk=lesson.pk %}">
+
+                        {{lesson.title}}
+                    </a>
                 </h3>
 
                 {{lesson.description}}
