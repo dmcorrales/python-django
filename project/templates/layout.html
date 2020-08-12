@@ -9,6 +9,10 @@
 </head>
 <body>
     <div class="site_container">
+        <nav>
+            <a href="{% url 'home' %}">Inicio</a>
+            <a href="{% url 'course_list' %}">Cursos</a>
+        </nav>
         {% block content %}{% endblock %}
     </div>
     

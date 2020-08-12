@@ -13,7 +13,7 @@ def course_detail(request,pk):
     return render(request, 'courses/course_detail.html', {'course': courses})
 
 
-def lesson_detail(request,pk):
-    lessons = get_object_or_404(Lesson, pk=pk)
+def lesson_detail(request,course_pk, lesson_pk):
+    lessons = get_object_or_404(Lesson, course_id=course_pk, pk=lesson_pk)
     return render(request,'courses/lesson_detail.html', {'lesson': lessons})
 
