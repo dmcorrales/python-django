@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-
+{% load humanize %}
 {% block title %} {{course.title}} {% endblock%}
 {% block content %}
 
@@ -10,7 +10,7 @@
 
         {{course.description}}
 
-        <p>Este curso tiene {{course.lesson_set.count}} leccion{{course.lesson_set.count|pluralize:"es"}}  {{course.lesson_set.all|join:", "}}</p>
+        <p>Este curso tiene {{course.lesson_set.count|apnumber}} leccion{{course.lesson_set.count|pluralize:"es"}}  {{course.lesson_set.all|join:", "}}</p>
 
         <section>
             {% for lesson in course.lesson_set.all %}
