@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% load course_extras %}
 {% block title %} Listado detalle {% endblock %}
 
 {% block content %}
@@ -9,7 +10,10 @@
     <p>
          {% with description=lesson.description %}
          {{description}}
-
+         
+      
+      <br>
+      Tiempo estimado en lectura {{description|wordcount|time_estimate}} minutos
       <br>
          Palabras:
          {{description|wordcount}}
